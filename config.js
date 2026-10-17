@@ -1,8 +1,6 @@
-// Add your Supabase project values here before deployment.
-// Supabase Dashboard -> Project Settings -> API
+// Supabase configuration for One-Go IELTS
 window.EXAM_CONFIG = {
-  SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",
-  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_KEY",
-  // Username login is internally mapped to this email suffix.
+  SUPABASE_URL: "https://lvhmelqoanriwwqruckm.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_DVIpQdNNhMwxG0t8y2VxGQ_vAsoP8MA",
   EMAIL_SUFFIX: "@students.exam.local"
 };
