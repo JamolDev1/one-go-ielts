@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Go IELTS Exam</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar"><div class="brand-mark">OF</div><div><div class="eyebrow">EXAM PORTAL</div><h1>One-Go IELTS</h1></div><span id="userBadge" class="user-badge hidden"></span></header>
+  <main>
+    <section id="loginView" class="card login-card">
+      <p class="eyebrow">STUDENT ACCESS</p><h2>Ready when you are.</h2>
+      <p class="muted">Sign in with the username and password provided by your teacher. Your answers are submitted privately.</p>
+      <form id="loginForm">
+        <label for="username">Student name / username</label><input id="username" name="username" autocomplete="username" required minlength="2" placeholder="e.g. jamoliddin">
+        <label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button class="primary" type="submit">Sign in <span>→</span></button><p id="loginError" class="error" role="alert"></p>
+      </form>
+      <div class="notice"><strong>Important</strong><p>Listening → Reading → Writing. Sections run in sequence. You cannot return to a completed section. Keep this tab open.</p></div>
+    </section>
+
+    <section id="introView" class="card hidden">
+      <p class="eyebrow">BEFORE YOU BEGIN</p><h2>One sitting. No rewind.</h2>
+      <div class="rule-grid"><div><strong>30 min</strong><span>Listening</span></div><div><strong>60 min</strong><span>Reading</span></div><div><strong>60 min</strong><span>Writing</span></div></div>
+      <ul class="rules"><li>Use headphones and check your volume before starting.</li><li>Listening audio is one-way. Pause, seek, and playback-speed controls are disabled.</li><li>When a section ends, it is locked and the next section opens automatically.</li><li>Do not refresh or close the tab. Your latest answers are saved locally during the test and submitted at the end.</li><li>Your teacher receives your responses. Your score is not shown on this page.</li></ul>
+      <button id="startExam" class="primary">Start exam <span>→</span></button>
+    </section>
+
+    <section id="examView" class="hidden">
+      <div class="exam-heading"><div><p class="eyebrow" id="sectionKicker">SECTION 1 OF 3</p><h2 id="sectionTitle">Listening</h2></div><div class="clock"><span class="clock-label">TIME REMAINING</span><strong id="clock">30:00</strong></div></div>
+      <div class="progress-track"><div id="progress" class="progress-fill"></div></div>
+      <div id="sectionHint" class="section-hint">Press play in the test player to begin the audio. It cannot be paused or rewound.</div>
+      <div id="testFrameWrap" class="frame-wrap"><iframe id="testFrame" title="Exam section" allow="autoplay"></iframe></div>
+      <section id="writingPanel" class="writing-panel hidden"><p class="eyebrow">SECTION 3 OF 3</p><h2>Writing</h2><p class="muted">Complete both tasks in the time available. Write your full responses below.</p>
+        <label for="task1">Task 1</label><textarea id="task1" rows="10" placeholder="Write your Task 1 response here…"></textarea><div class="word-count"><span id="count1">0 words</span><span>Suggested minimum: 150 words</span></div>
+        <label for="task2">Task 2</label><textarea id="task2" rows="14" placeholder="Write your Task 2 essay here…"></textarea><div class="word-count"><span id="count2">0 words</span><span>Suggested minimum: 250 words</span></div>
+      </section>
+      <div class="exam-footer"><span id="saveStatus">Answers are saved in this browser during the exam.</span><button id="finishSection" class="secondary hidden">Finish writing and submit</button></div>
+    </section>
+
+    <section id="doneView" class="card hidden"><div class="done-icon">✓</div><p class="eyebrow">SUBMISSION RECEIVED</p><h2>You’re done.</h2><p class="muted">Your responses have been sent to your teacher. No score or answer key is displayed here.</p><p id="submissionStatus" class="submission-status"></p><button id="signOut" class="secondary">Sign out</button></section>
+  </main>
+  <footer>One-Go IELTS · Assessment portal</footer>
+</div>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
